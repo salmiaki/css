@@ -1,0 +1,140 @@
+@color_1: inherit;
+@color_2: white;
+@background_color_1: transparent;
+@background_color_2: #eaeaea;
+@background_color_3: #008CBA;
+@background_color_4: #2E64FE;
+@background_color_5: #5882FA;
+@padding_titre: 20px;
+@padding_header: 3px;
+@fenetre_margin: 100px;
+
+nav {
+	text-align: center;
+}
+.scrolling-box {
+	background-color: transparent;
+	display: block;
+	height: 100%;
+	overflow-y: scroll;
+	text-align: left;
+	width: 100%;
+	scroll-behavior: smooth;
+}
+.titre {
+	background-color: @background_color_4;
+	padding-top: @padding_titre;
+	padding-bottom: @padding_titre;
+	padding-left: @padding_titre;
+}
+.header {
+	background-color: @background_color_5;
+	padding-top: @padding_header;
+	padding-bottom: @padding_header;
+	padding-left: 0px;	
+}
+article {
+	display: grid;
+	grid-template-columns: [full-start] minmax(1em, 1fr) [main-start] minmax(0, 56em) [main-end] minmax(1em, 1fr) [full-end];
+	grid-gap: 1em;
+	>* {
+		background-color: @background_color_2;
+		padding: 2em;
+	}
+}
+section {
+	grid-column: main;
+}
+figure {
+	grid-column: full;
+	text-align: center;
+}
+body {
+	padding: 2em 0;
+}
+
+input[type=checkbox]:checked ~.row {
+	.container {
+	float: right;
+    transform: rotate(180deg);y: 2s;
+	position: relative;
+	width: 50%;
+	&:hover {
+		.overlay {
+			opacity: 0.8;
+		}
+	}
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: @background_color_3;
+}
+.image {
+	display: flex;
+	flex: 50%;
+	width: 100%;
+	height: auto;
+	padding: 0;
+}
+.text {
+	color: @color_2;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+	}
+}
+
+.container {
+	float: left;
+	transition: width 2s, height 2s, transform 2s;
+	position: relative;
+	width: 50%;
+	&:hover {
+		.overlay {
+			opacity: 0.8;
+		}
+	}
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: @background_color_3;
+}
+.image {
+	display: flex;
+	flex: 50%;
+	width: 100%;
+	height: auto;
+	padding: 0;
+}
+.text {
+	color: @color_2;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
